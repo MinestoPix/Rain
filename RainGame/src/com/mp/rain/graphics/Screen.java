@@ -13,8 +13,6 @@ public class Screen {
 	
 	private Random random = new Random();
 	
-	private int pixel;
-	
 	public Screen(int width, int height) {
 		
 		this.width = width;
@@ -38,16 +36,15 @@ public class Screen {
 	public void render(int xOffset, int yOffset) {
 		
 		for (int y = 0; y < height; y++) {
-			int yy = y + yOffset;
+			int yp = y - yOffset;
+			if (yp < 0 || yp >= height)
+				continue;
 			for (int x = 0; x < width; x++) {
-				int xx = x + xOffset;
+				int xp = x - xOffset;
+				if (xp < 0 || xp >= width)
+					continue;
 				
-				// int tileIndex = ((xx >> 4) & MAP_SIZE_MASK) + ((yy >> 4) & MAP_SIZE_MASK) * MAP_SIZE;
-				
-				// checking if in bounds
-				pixel = (x + xOffset) + (y + yOffset) * width;
-				if (pixel >= 0 && pixel < pixels.length)
-					pixels[pixel] = Sprite.grass.pixels[(xx & 15) + (yy & 15) * Sprite.grass.SIZE];
+				pixels[xp + yp * width] = Sprite.grass.pixels[(x & 15) + (y & 15) * Sprite.grass.SIZE];
 				
 			}
 		}
