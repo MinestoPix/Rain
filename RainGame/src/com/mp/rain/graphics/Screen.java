@@ -42,12 +42,12 @@ public class Screen {
 			for (int x = 0; x < width; x++) {
 				int xx = x + xOffset;
 				
-				int tileIndex = ((xx >> 4) & MAP_SIZE_MASK) + ((yy >> 4) & MAP_SIZE_MASK) * MAP_SIZE;
+				// int tileIndex = ((xx >> 4) & MAP_SIZE_MASK) + ((yy >> 4) & MAP_SIZE_MASK) * MAP_SIZE;
 				
 				// checking if in bounds
-				pixel = x + y * width;
+				pixel = (x + xOffset) + (y + yOffset) * width;
 				if (pixel >= 0 && pixel < pixels.length)
-					pixels[pixel] = tiles[tileIndex];
+					pixels[pixel] = Sprite.grass.pixels[(xx & 15) + (yy & 15) * Sprite.grass.SIZE];
 				
 			}
 		}
