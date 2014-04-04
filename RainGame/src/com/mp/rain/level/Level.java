@@ -4,8 +4,8 @@ import com.mp.rain.graphics.Screen;
 
 public class Level {
 	
-	private int width, height;
-	private int[] tiles;
+	protected int width, height;
+	protected int[] tiles;
 	
 	public Level(int width, int height) {
 		
@@ -23,7 +23,7 @@ public class Level {
 		
 	}
 	
-	private void generateLevel() {
+	protected void generateLevel() {
 		
 	}
 	
@@ -35,9 +35,9 @@ public class Level {
 		
 	}
 	
-	private void time() {
+	/*private void time() {
 		
-	}
+	}*/
 	
 	public void render(int xScroll, int yScroll, Screen screen) {
 		
