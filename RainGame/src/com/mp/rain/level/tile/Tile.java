@@ -21,7 +21,7 @@ public class Tile {
 		
 	}
 	
-	public boolean solid(){
+	public boolean solid() {
 		return false;
 	}
 	
