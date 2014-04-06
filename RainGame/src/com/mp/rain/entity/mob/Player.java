@@ -28,8 +28,10 @@ public class Player extends Mob {
 	public void update() {
 		
 		int xa = 0, ya = 0;
+		
 		if (anim < 7500) anim++;
 		else anim = 0;
+		
 		if (input.up) ya--;
 		if (input.down) ya++;
 		if (input.left) xa--;

@@ -13,7 +13,7 @@ import com.mp.rain.entity.mob.Player;
 import com.mp.rain.graphics.Screen;
 import com.mp.rain.input.Keyboard;
 import com.mp.rain.level.Level;
-import com.mp.rain.level.RandomLevel;
+import com.mp.rain.level.SpawnLevel;
 
 public class Game extends Canvas implements Runnable {
 	
@@ -44,7 +44,7 @@ public class Game extends Canvas implements Runnable {
 		screen = new Screen(width, height);
 		frame = new JFrame();
 		key = new Keyboard();
-		level = new RandomLevel(64, 64);
+		level = new SpawnLevel("/textures/level.png");
 		player = new Player(key);
 		
 		addKeyListener(key);

@@ -21,11 +21,11 @@ public class RandomLevel extends Level {
 				
 				rand = random.nextInt(100);
 				
-				if (rand < 60) tiles[x + y * width] = 0;
-				else if (rand < 80) tiles[x + y * width] = 1;
-				else if (rand < 90) tiles[x + y * width] = 2;
-				else if (rand < 100) tiles[x + y * width] = 3;
-				else tiles[x + y * width] = random.nextInt(4);
+				if (rand < 60) tilesInt[x + y * width] = 0;
+				else if (rand < 80) tilesInt[x + y * width] = 1;
+				else if (rand < 90) tilesInt[x + y * width] = 2;
+				else if (rand < 100) tilesInt[x + y * width] = 3;
+				else tilesInt[x + y * width] = random.nextInt(4);
 				
 			}
 		}
