@@ -16,7 +16,6 @@ public class SpawnLevel extends Level {
 	}
 	
 	protected void loadLevel(String path) {
-		System.out.println("TEST");
 		try {
 			BufferedImage image = ImageIO.read(SpawnLevel.class.getResource(path));
 			int w = image.getWidth();

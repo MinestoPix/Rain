@@ -11,7 +11,18 @@ public class SpriteSheet {
 	public final int SIZE;
 	public int[] pixels;
 	
-	public static SpriteSheet tiles = new SpriteSheet("/textures/spritesheet.png", 256);
+	// Tile sprites
+	public static SpriteSheet grass = new SpriteSheet("/textures/tiles/grass_top.png", 16);
+	public static SpriteSheet flower = new SpriteSheet("/textures/tiles/flower.png", 16);
+	public static SpriteSheet rock = new SpriteSheet("/textures/tiles/rock.png", 16);
+	public static SpriteSheet hedge = new SpriteSheet("/textures/tiles/hedge.png", 16);
+	public static SpriteSheet water = new SpriteSheet("/textures/tiles/water.png", 16);
+	public static SpriteSheet wall1 = new SpriteSheet("/textures/tiles/stonebrick.png", 16);
+	public static SpriteSheet wall2 = new SpriteSheet("/textures/tiles/stonebrick_cracked.png", 16);
+	public static SpriteSheet floor = new SpriteSheet("/textures/tiles/cobblestone.png", 16);
+	
+	// Player sprites
+	public static SpriteSheet player = new SpriteSheet("/textures/player/king_cherno.png", 128);
 	
 	public SpriteSheet(String path, int size) {
 		

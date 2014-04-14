@@ -76,7 +76,7 @@ public class Screen {
 				if (xa < 0) xa = 0;
 				
 				int col = sprite.pixels[xs + ys * 32];
-				if (col != 0xffff00ff) pixels[xa + ya * width] = col;
+				if (col != 0xffffffff) pixels[xa + ya * width] = col;
 			}
 		}
 		
