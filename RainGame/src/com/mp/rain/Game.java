@@ -1,6 +1,7 @@
 package com.mp.rain;
 
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
@@ -12,8 +13,9 @@ import javax.swing.JFrame;
 import com.mp.rain.entity.mob.Player;
 import com.mp.rain.graphics.Screen;
 import com.mp.rain.input.Keyboard;
+import com.mp.rain.input.Mouse;
 import com.mp.rain.level.Level;
-import com.mp.rain.level.SpawnLevel;
+import com.mp.rain.level.TileCoordinate;
 
 public class Game extends Canvas implements Runnable {
 	
@@ -44,10 +46,16 @@ public class Game extends Canvas implements Runnable {
 		screen = new Screen(width, height);
 		frame = new JFrame();
 		key = new Keyboard();
-		level = new SpawnLevel("/levels/level.png");
-		player = new Player(key);
+		level = Level.spawn;
+		TileCoordinate playerSpawn = new TileCoordinate(20, 46);
+		player = new Player(playerSpawn.x(), playerSpawn.y(), key);
+		player.init(level);
 		
+		
+		Mouse mouse = new Mouse();
 		addKeyListener(key);
+		addMouseListener(mouse);
+		addMouseMotionListener(mouse);
 		
 	}
 	
@@ -144,6 +152,10 @@ public class Game extends Canvas implements Runnable {
 		Graphics g = bs.getDrawGraphics();
 		
 		g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
+		
+		g.setColor(Color.WHITE);
+		if(Mouse.getB()==1) g.setColor(Color.RED);
+		g.fillRect(Mouse.getX() - 24, Mouse.getY() - 24, 48, 48);
 		
 		g.dispose();
 		
