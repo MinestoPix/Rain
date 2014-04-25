@@ -143,19 +143,14 @@ public class Game extends Canvas implements Runnable {
 		level.render(xScroll, yScroll, screen);
 		player.render(screen);
 		
-		for (int i = 0; i < pixels.length; i++) {
-			
-			pixels[i] = screen.pixels[i];
-			
-		}
+		System.arraycopy(screen.pixels, 0, pixels, 0, pixels.length);
 		
 		Graphics g = bs.getDrawGraphics();
 		
 		g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
 		
-		g.setColor(Color.WHITE);
-		if(Mouse.getB()==1) g.setColor(Color.RED);
-		g.fillRect(Mouse.getX() - 24, Mouse.getY() - 24, 48, 48);
+//		g.setColor(Color.WHITE);
+//		if(Mouse.getB()==1) g.fillRect(Mouse.getX() - 24, Mouse.getY() - 24, 48, 48);
 		
 		g.dispose();
 		
